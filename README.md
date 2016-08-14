@@ -1,2 +1,2 @@
 # leetcode
-lionel's leetcode travel.
+Lionel's leetcode travel.

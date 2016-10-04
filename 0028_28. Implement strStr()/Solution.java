@@ -19,12 +19,17 @@ public class Solution {
         int i = 0;
         int j = 0;
         while(i != haystack.length() && j != needle.length()){
-            if(j == -1 || haystack.charAt(i) == needle.charAt(j)){
+            if(haystack.charAt(i) == needle.charAt(j)){
                 i++;
                 j++;
             }
             else{
-                j = next[j];
+                if(j == 0){
+                    i++;
+                }
+                else{
+                    j = next[j];
+                }
             }
         }
         if(j == needle.length()){
@@ -39,17 +44,23 @@ public class Solution {
     
     public int[] getNext(String needle){
         int[] next = new int[needle.length()];
-        next[0] = -1;
-        int i = 0;
-        int j = -1;
-        while(i != needle.length() - 1){
-            if(j == -1 || needle.charAt(i) == needle.charAt(j)){
+        next[0] = -1;   // 什么值都可以
+        int i = 1;
+        int j = 0;
+        while(i < needle.length() - 1){
+            if(needle.charAt(i) == needle.charAt(j)){
                 i++;
                 j++;
                 next[i] = j;
             }
             else{
-                j = next[j];
+                if(j == 0){
+                    i++;
+                    next[i] = 0;
+                }
+                else{
+                    j = next[j];
+                }
             }
         }
         return next;

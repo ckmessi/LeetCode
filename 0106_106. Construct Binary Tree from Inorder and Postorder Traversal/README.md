@@ -1,0 +1,11 @@
+### 106. Construct Binary Tree from Inorder and Postorder Traversal
+
+Given inorder and postorder traversal of a tree, construct the binary tree.
+
+Note:
+You may assume that duplicates do not exist in the tree.
+
+* * *
+
+给定中序遍历和后序遍历的结果，构建出二叉树。  
+
